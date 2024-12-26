@@ -81,7 +81,7 @@ if data_perpustakaan:
     # Input pengguna
     daftar_kategori = ["Cari Judul Laporan Berdasarkan Kata Kunci"] + [kategori['kategori'] for kategori in data_perpustakaan]
 
-    keyword = st.text_input("Masukkan Judul, NIM, Nama, Tahun, Kab/Kota, Tempat Pelaksanaan untuk pencarian:")
+    keyword = st.text_input("Masukkan Judul, NIM, Nama, Tahun, Kab/Kota, Tempat Pelaksanaan untuk Pencarian:")
 
     # Tombol pencarian
     if st.button("Cari"):
