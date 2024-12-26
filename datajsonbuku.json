@@ -1,0 +1,568 @@
+[
+    {
+      "kategori": "Tampilkan Daftar Judul Laporan PKL Prodi Teknik Informatika",
+      "buku": [
+        {
+          
+          "Nomor_Urut_Arsip": "54",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816090",
+          "Nama_Mahasiswa": "RIZKI YULIANTO",
+          "Judul_Laporan_PKL": "PENGGUNAAN APLIKASI NON PETI KEMAS SYSTEM(NPK-S)",
+          "Nama_Dosen_Pembimbing": "Ferry Faisal, S.S.S.T., MT",
+          "Nama_Tempat_Pelaksanaan": "PT.IPC PELINDO II (PERSERO) CABANG PONTIANAK",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "85",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816078",
+          "Nama_Mahasiswa": "ERSHA LEONY VIRGINA",
+          "Judul_Laporan_PKL": "PENGGUNAAN WEBSITE SISTEM INFORMASI MANAJEMEN BARANG DAERAH (SIMBADA) UNTUK PENDATAAN BARANG DAERAH",
+          "Nama_Dosen_Pembimbing": "Fitri Wibowo, SST., MT",
+          "Nama_Tempat_Pelaksanaan": "SEKERTARIAT DAERAH KOTA PONTIANAK",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "105",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816091",
+          "Nama_Mahasiswa": "URAY NUR KHADIJAH",
+          "Judul_Laporan_PKL": "MEMPELAJARI PENGGUNAAN SIMASET (SISTEM MANAJEMEN ASET) BERBASIS WEBSITE",
+          "Nama_Dosen_Pembimbing": "Freska Rolansa, S.T., M. Cs",
+          "Nama_Tempat_Pelaksanaan": "LPP RRI PONTIANAK",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "70",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816100",
+          "Nama_Mahasiswa": "NURAFNI",
+          "Judul_Laporan_PKL": "PEMELIHARAAN PERANGKAT BTS (BASE TRANSEIVER STATIONS)",
+          "Nama_Dosen_Pembimbing": "Neny Firdayanti, S.T., M.T.",
+          "Nama_Tempat_Pelaksanaan": "PT. INFRATECH INDONESIA WEST KALIMANTAN REGION OPERATION DEPARTEMEN",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "16",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816002",
+          "Nama_Mahasiswa": "U. MEGA WATI",
+          "Judul_Laporan_PKL": "APLIKASI BUKU TAMU MENGGUNAKAN PHP DAN MYSQL",
+          "Nama_Dosen_Pembimbing": "Ramli S.T., M.T",
+          "Nama_Tempat_Pelaksanaan": "KANTOR WILAYAH KEMENTERIAN HUKUM DAN HAK ASASI MANUSIA",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kalimantan Barat"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "20",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816028",
+          "Nama_Mahasiswa": "Aldi Mulia Rismanto",
+          "Judul_Laporan_PKL": "Membuat Validasi Data dan Fitur Export Excel Pada Website Baru Sosialisasi Kegiatan",
+          "Nama_Dosen_Pembimbing": "Lindung Siswanto, S.Kom., M.Eng",
+          "Nama_Tempat_Pelaksanaan": "Badan Pengawasan Pemilu Kota Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "101",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816092",
+          "Nama_Mahasiswa": "Yanti Novitasari",
+          "Judul_Laporan_PKL": "Penggunaan Aplikasi Sibeji",
+          "Nama_Dosen_Pembimbing": "Irawan Suharto, S.T., MT",
+          "Nama_Tempat_Pelaksanaan": "Kantor Dinas Komunikasi dan Informatika",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Sintang"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "33",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816034",
+          "Nama_Mahasiswa": "Imam Muktamaulhaq",
+          "Judul_Laporan_PKL": "Rancang Bangun Database dan Form Login Website Pendataan IP Address Komputer",
+          "Nama_Dosen_Pembimbing": "Tommi Suryanto, S.Kom., M.Kom",
+          "Nama_Tempat_Pelaksanaan": "Perunda AIR Minum Tirta Khatulistiwa Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "71",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816058",
+          "Nama_Mahasiswa": "Alvelius Alvendi Suayang",
+          "Judul_Laporan_PKL": "Pembuatan Visitor Management System Berbasis Web Di Dinas Komunikasi Dan Informatika Provinsi Kalimantan Barat",
+          "Nama_Dosen_Pembimbing": "Freska Rolansa, S.T., M.Cs",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikasi dan Informatika Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "82",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816104",
+          "Nama_Mahasiswa": "Rizky Pratama Syahrul Ramadhan",
+          "Judul_Laporan_PKL": "Rancang Bangun Sistem Informasi Pengarsipan Surat Berbasis Web",
+          "Nama_Dosen_Pembimbing": "Budianingsih, S.T., M.T.",
+          "Nama_Tempat_Pelaksanaan": "Bidang Umum Dan Aparatur Dinas Pendidikan Dan Kebudayaan Kota Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "73",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816109",
+          "Nama_Mahasiswa": "Reza Febriadi",
+          "Judul_Laporan_PKL": "Pemetaan Coverage Area base Transreceiver Station (BTS) Menggunkan Software Quantum Geographic Infromation System (QGIS)",
+          "Nama_Dosen_Pembimbing": "Yasir Arafat S.ST., MT.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikas Dan Informatika (DISKOMINFO)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Sambas"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "79",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816006",
+          "Nama_Mahasiswa": "Mawan Saputra",
+          "Judul_Laporan_PKL": "Perawatan Base Transreceiver Station (BTS)",
+          "Nama_Dosen_Pembimbing": "Neny Firdayanti, ST., M.T.",
+          "Nama_Tempat_Pelaksanaan": "PT. Infratech Indonesia",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Jakarta Pusat"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "68",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816009",
+          "Nama_Mahasiswa": "Eka Herfit Ramadhan",
+          "Judul_Laporan_PKL": "Desain Interface Website Dinas Pemberdayaan Masyarakat Dan Desa Provinsi Kalimantan Barat Menggunakan Content Management System (CMS) Wordpress",
+          "Nama_Dosen_Pembimbing": "Neny Firdayanti, ST., M.T.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Pemberdayaan Masyarakat Dan Desa (DPMD)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "25",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816065",
+          "Nama_Mahasiswa": "Siti Khairiyah",
+          "Judul_Laporan_PKL": "Membangun Website Dokumentasi Progres Gedung Di Pembangunan Terminal Kijing PT. WIJAYA KARYA (PERSERO) Tbk.",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "PT. Wijaya Karya (PERSERO)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Mempawah"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "55",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816103",
+          "Nama_Mahasiswa": "Cristian Elza",
+          "Judul_Laporan_PKL": "Aplikasi Sistem Informasi Penelusuran Perkara (SIPP) Khususnya Arsip Perkara Perdata",
+          "Nama_Dosen_Pembimbing": "Ferry Faisal, S.S.T., MT.",
+          "Nama_Tempat_Pelaksanaan": "Pengadilan Negeri Mempawah",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Mempawah"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "107",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816097",
+          "Nama_Mahasiswa": "Zura Permata",
+          "Judul_Laporan_PKL": "Pembuatan Aplikasi Pendataan Surat Keluar dan Faximile Keluar Menggunakan Microsoft Access 2016 Di Perum Bulog Devisi Regional Kalimantan Barat",
+          "Nama_Dosen_Pembimbing": "Lindung Siswanto, S.Kom., M.Eng",
+          "Nama_Tempat_Pelaksanaan": "Perum Bulog Divre Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "51",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816038",
+          "Nama_Mahasiswa": "Miftahul Janna",
+          "Judul_Laporan_PKL": "Rancang Bangun Database Website Raja Uduk",
+          "Nama_Dosen_Pembimbing": "Tommi Suryanto, S.Kom., M.Kom",
+          "Nama_Tempat_Pelaksanaan": "CV. IdeKite",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "74",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816081",
+          "Nama_Mahasiswa": "Livia Tama Putri",
+          "Judul_Laporan_PKL": "Pembuatan Website Manajemen Surat",
+          "Nama_Dosen_Pembimbing": "Muhammad Diponegoro, S.Kom., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Pertanian Tanaman Pangan Dan Hortikultura Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "15",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816067",
+          "Nama_Mahasiswa": "Ryan Maghribie",
+          "Judul_Laporan_PKL": "Pengolahan Gambar Dan Video Di Diskominfo Kota Pontianak",
+          "Nama_Dosen_Pembimbing": "Tri Bowo Atmojo, S.T., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikas Dan Informatika Kota Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "22",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816114",
+          "Nama_Mahasiswa": "Haris Hijazi",
+          "Judul_Laporan_PKL": "Rancang Bangun Jaringan Lokal Nirkabel",
+          "Nama_Dosen_Pembimbing": "Fitri Wibowo, S.ST., M.T.",
+          "Nama_Tempat_Pelaksanaan": "Sekolah Dasar Islam Terpadu Al-Mumtaz Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "23",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816102",
+          "Nama_Mahasiswa": "Wichelta Iansyah",
+          "Judul_Laporan_PKL": "Penggunaan Aplikasi Website Berita Acara Serah Terima (BAST) Online",
+          "Nama_Dosen_Pembimbing": "Muhammad Diponegoro, S.Kom., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Pertanian Tanaman Pangan Dan Hortikultura Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "24",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816015",
+          "Nama_Mahasiswa": "Dalilah Nia Ayumi",
+          "Judul_Laporan_PKL": "Desain X Banner Toko Kue Donat Dapur Mallika Menggunakan Aplikasi Corel Draw X7",
+          "Nama_Dosen_Pembimbing": "Budianingsih, S.T., M.T.",
+          "Nama_Tempat_Pelaksanaan": "PT. Atha Anak Katulistiwa Digital Printing",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kubu Raya"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "25",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816018",
+          "Nama_Mahasiswa": "Juniarsih",
+          "Judul_Laporan_PKL": "Penggunaan Mesin Outdoor Untuk Mencetak Banner Di Percetakan PT. Atha Anak Khatulistiwa",
+          "Nama_Dosen_Pembimbing": "Budianingsih, S.T., M.T.",
+          "Nama_Tempat_Pelaksanaan": "PT. Atha Anak Katulistiwa Digital Printing",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kubu Raya"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "26",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816128",
+          "Nama_Mahasiswa": "Meyrizka Maharani",
+          "Judul_Laporan_PKL": "The Using Website SP2KP For Inputting Market Price",
+          "Nama_Dosen_Pembimbing": "Muhammad Hasbi, S.T., M.T.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Perindustrian dan Perdagangan",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "27",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "32021816039",
+          "Nama_Mahasiswa": "Felik",
+          "Judul_Laporan_PKL": "Mengonversikan Sebuah Web Tata Naskah Dinas Elektronik Menjadi Sebuah Aplikasi",
+          "Nama_Dosen_Pembimbing": "Pausta Yugianus, S.KOM., M.T",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikasi dan Informatika Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "28",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816050",
+          "Nama_Mahasiswa": "Muhammad Rizal Saputra",
+          "Judul_Laporan_PKL": "Penggunaan Aplikasi Di Menara Computer",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "CV. Menara Square",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "29",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201815105",
+          "Nama_Mahasiswa": "Egi Artha Putri",
+          "Judul_Laporan_PKL": "Penggunaan Aplikasi Smart Professional Surveillance System Pada Monitoring CCTV Lalu Lintas Dinas Perhubungan Kabupaten Sambas",
+          "Nama_Dosen_Pembimbing": "H. Irawan Suharto, S.T., M.T",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikasi Dan Informatika (DISKOMINFO)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Sambas"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "30",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816080",
+          "Nama_Mahasiswa": "Mellanda Ayuni Lestari",
+          "Judul_Laporan_PKL": "Penggunaan Website Sistem Informasi Pasar Hortikultura",
+          "Nama_Dosen_Pembimbing": "Muhammad Diponegoro, S.Kom., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Pertanian Tanaman Pangan Dan Hortikultura Provinsi Kalimantan Barat",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "57",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816130",
+          "Nama_Mahasiswa": "SHEFFIA AFIEZHA",
+          "Judul_Laporan_PKL": "THE USE OF WIBSITE SP2KP AND PACKAGING DESIGN",
+          "Nama_Dosen_Pembimbing": "Muhammad Hasbi, ST., M.T",
+          "Nama_Tempat_Pelaksanaan": "UPT(IPOK)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Mempawah"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "88",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816026",
+          "Nama_Mahasiswa": "NURHIDAYAH",
+          "Judul_Laporan_PKL": "AKTIVASI SOFTWARE OFFICIAL MICROSOFT OFFICE HOME & BSTUDENT 2019",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "cv.menara square",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "81",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816005",
+          "Nama_Mahasiswa": "MARSELA JUINI",
+          "Judul_Laporan_PKL": "PENGGUNAAN APLIKASI WONDERSHARE FILMORA UNTUK PEMBUATAN DAN PENGEDITAN VIDIO PROMOSI HANDPHONE",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "cv.menara square",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "108",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816082",
+          "Nama_Mahasiswa": "ANDRI MAULANA",
+          "Judul_Laporan_PKL": "RANCANG BANGUN DESIGN UNTUK WIBSITE PENDATAAN IP ADDRES KOMPUTER",
+          "Nama_Dosen_Pembimbing": "Tommi Suryanto, S.Kom., M.Kom",
+          "Nama_Tempat_Pelaksanaan": "PDAM Tirta Kathulistiwa",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "52",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816027",
+          "Nama_Mahasiswa": "KRISTOFORUS FASCO DATUMARE",
+          "Judul_Laporan_PKL": "RANCANG BANGUN ADMIN PANEL WEBSITE RAJA UDUK",
+          "Nama_Dosen_Pembimbing": "Tommi Suryanto, S.Kom., M.Kom",
+          "Nama_Tempat_Pelaksanaan": "CV.IDEKITE INDONESIA",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "7",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816016",
+          "Nama_Mahasiswa": "MUHAMMAD ARSYAD",
+          "Judul_Laporan_PKL": "OPTIMASI DIGITAL MARKETING",
+          "Nama_Dosen_Pembimbing": "Dr. Halasan Sihombimbing",
+          "Nama_Tempat_Pelaksanaan": "PT. LUMBUNG PANGAN PONTIANAK(INDOFARM)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "41",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816068",
+          "Nama_Mahasiswa": "DEWA MAHARDIKA",
+          "Judul_Laporan_PKL": "SISTEM INFORMASI RESERVASI START-UP HUB DISKOMINFO",
+          "Nama_Dosen_Pembimbing": "Tri Bowo Atmojo, S.T., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikas Dan Informatika Kota Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "59",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816007",
+          "Nama_Mahasiswa": "MEDI KURNIAWAN",
+          "Judul_Laporan_PKL": "IMPLEMENTASI APLIKASI PHOTOSHOP DALAM PEMBUATAN DESAIN SPANDUK",
+          "Nama_Dosen_Pembimbing": "Budianingsih, S.T., M.T",
+          "Nama_Tempat_Pelaksanaan": "PT. ATHA ANAKHATULISTIWA KUBURAYA",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kuburaya"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "95",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3202816044",
+          "Nama_Mahasiswa": "Rizki Gilang Rafiansyah",
+          "Judul_Laporan_PKL": "RANCANG BANGUN FORM LOGIN HOTSPOT BERBASIS WEB",
+          "Nama_Dosen_Pembimbing": "Suheri, S.T., M.Cs",
+          "Nama_Tempat_Pelaksanaan": "Dinas Komunikasi dan Informatika Kabupaten Kubu Raya",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kubu Raya"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "21",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816041",
+          "Nama_Mahasiswa": "Fandi Ananta",
+          "Judul_Laporan_PKL": "DESAIN USER INTERFACE WEBSITE",
+          "Nama_Dosen_Pembimbing": "Lindung Siswanto, S.KOM., M.Eng",
+          "Nama_Tempat_Pelaksanaan": "BADAN PENGAWAS PEMILU",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          
+          "Nomor_Urut_Arsip": "18",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816020",
+          "Nama_Mahasiswa": "SINDY OKTAVIANA",
+          "Judul_Laporan_PKL": "PENGGUNAAN APLIKASI E-FORM HORTIKULTURA",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "DINAS KETAHANAN PANGAN DAN PERTANIAN",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kuburaya"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "32",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "32021816055",
+          "Nama_Mahasiswa": "Dede Mulyono",
+          "Judul_Laporan_PKL": "MERANCANG DATABASE WEBSITE SISTEM INFORMASI SOSIALISASI BAWASLU",
+          "Nama_Dosen_Pembimbing": "Lindung Siswanto, S.KOM., M.Eng",
+          "Nama_Tempat_Pelaksanaan": "BADAN PENGAWAS PEMILIHAN UMUM",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "72",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816066",
+          "Nama_Mahasiswa": "GUSTI DAMARA",
+          "Judul_Laporan_PKL": "PENGGUNAAN APLIKASI KOMPUTERISASI KEGIATAN PERTAHANAN(KKP)",
+          "Nama_Dosen_Pembimbing": "Yasir Arafat, S.ST., M.T",
+          "Nama_Tempat_Pelaksanaan": "KANTOR PERTAHANAN",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kuburaya"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "104",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816075",
+          "Nama_Mahasiswa": "SYARIFAH NISRINA ADISIA",
+          "Judul_Laporan_PKL": "WEBSITE INPUT DATA PERWA DAN PERDA SEKRETARIAT",
+          "Nama_Dosen_Pembimbing": "Fitri Wibowo, S.ST., M.T",
+          "Nama_Tempat_Pelaksanaan": "KANTOR WALIKOTA PONTIANAK",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "27",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816084",
+          "Nama_Mahasiswa": "AHMAD TUFLIHUN",
+          "Judul_Laporan_PKL": "PENGGUNAAN AMAZON WEB SERVICES DAN FRAMEWORK A-FRAME UNTUK MEMBUAT WEBSITE VIRTUAL TOUR NO SKIN",
+          "Nama_Dosen_Pembimbing": "Wawan Heryawan, ST., M.T",
+          "Nama_Tempat_Pelaksanaan": "CV.ULTIMA SOLUSI DIGITAL",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "19",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816024",
+          "Nama_Mahasiswa": "KERRY THRISNAWATI",
+          "Judul_Laporan_PKL": "PENGGUNAAN APLIKASI BERBASIS WEBSITE PENGUATAN DATA PANGAN STRATEGIS(PDPS)",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "DINAS KETAHANAN PANGAN DAN PERTANIAN",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kuburaya"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "50",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "32021816052",
+          "Nama_Mahasiswa": "MICHELE VALISCO",
+          "Judul_Laporan_PKL": "PERANGKAT BTS",
+          "Nama_Dosen_Pembimbing": "Neny Firdyanti, S.T., M.T",
+          "Nama_Tempat_Pelaksanaan": "PT. INFRATECH INDONESIA WEST KALIMANTAN REGION OPERATION DEPARTMENT",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "12",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816037",
+          "Nama_Mahasiswa": "NATASYA ANDRA PUTRI",
+          "Judul_Laporan_PKL": "PENGGUNAAN SISTEM INFORMASI MANAJEMEN KEPEGAWAIAN (SIMPEG)",
+          "Nama_Dosen_Pembimbing": "Pausta Yugianus, S.KOM., M.T",
+          "Nama_Tempat_Pelaksanaan": "BADAN KEPEGAWAIAN DAN PENGEMBANGAN SUMBER DAYA MANUSIA (BKPSDM)",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "35",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816043",
+          "Nama_Mahasiswa": "ARMANDA YUSTRI FANDI",
+          "Judul_Laporan_PKL": "PERBAIKAN DAN PERAKITAN PERSONAL COMPUTER",
+          "Nama_Dosen_Pembimbing": "Sarah Bibi, S.ST., M.Pd",
+          "Nama_Tempat_Pelaksanaan": "cv.menara square",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "66",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816117",
+          "Nama_Mahasiswa": "FARHAN AZHANI KASMARA",
+          "Judul_Laporan_PKL": "PENGUNAAN SISTEM INFORMASI MANAJEMEN SURAT MENYURAT",
+          "Nama_Dosen_Pembimbing": "Tri Bowo Atmojo, S.T., M.Cs.",
+          "Nama_Tempat_Pelaksanaan": "DINAS KOMUNIKASI DAN INFORMATIKA",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "67",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816084",
+          "Nama_Mahasiswa": "Ahmad Tuflihun",
+          "Judul_Laporan_PKL": "Penggunaan Amazon Web Services dan Framework A-Frame Untuk Membuat Website Virtual TOUR NU SKIN",
+          "Nama_Dosen_Pembimbing": "Wawan Heryyawan, ST., MT",
+          "Nama_Tempat_Pelaksanaan": "CV. ULTIMA SOLUSI DIGITAL",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "53",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816075",
+          "Nama_Mahasiswa": "Syarifah Nisrina Adisia",
+          "Judul_Laporan_PKL": "Website Input Data Perwa dan Sekertariat Daerah Kota Pontianak",
+          "Nama_Dosen_Pembimbing": "Fitri Wibowo, S.ST., MT",
+          "Nama_Tempat_Pelaksanaan": "Kantor Walikota Pontianak",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kota Pontianak"
+        },
+        {
+          "Letak_Buku_Laporan_PKL": "PKL. Informatika D.III 2016",
+          "Nomor_Urut_Arsip": "53",
+          "Tahun_Pelaksanaan": "2021",
+          "NIM": "3201816066",
+          "Nama_Mahasiswa": "Gusti Damara",
+          "Judul_Laporan_PKL": "Penggunaan Aplikasi Komputerisasi Kegiatan Pertahanan (KKP)",
+          "Nama_Dosen_Pembimbing": "Yasir Arafat, S.ST., MT",
+          "Nama_Tempat_Pelaksanaan": "Kantor Pertahanan Kabupaten Kubu Raya",
+          "Kabupaten_/_Kota_Pelaksanaan": "Kabupaten Kubu Raya"
+        }
+      ]
+    }
+  ]
