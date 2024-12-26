@@ -66,7 +66,7 @@ st.sidebar.image(qr_image, caption="Untuk Mengakses Portal Ini Gunakan QR Code D
 st.title("Portal Pencarian Judul Laporan PKL Prodi Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri Pontianak")
 
 # Nama file JSON yang ingin dibaca
-nama_file = 'C://TUGAS MAKUL ALGORITMA PEMROGRAMAN//KELOMPOK 2//datajsonbuku.json'
+nama_file = 'datajsonbuku.json'
 
 # Membaca data dari file JSON
 data_perpustakaan = baca_data_dari_file(nama_file)
