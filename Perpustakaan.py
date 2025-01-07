@@ -36,6 +36,11 @@ def baca_data_dari_file(nama_file):
         st.error(f"File '{nama_file}' tidak ditemukan.")
         return None
 
+# Fungsi untuk menulis data ke file JSON
+def tulis_data_ke_file(nama_file, data):
+    with open(nama_file, 'w', encoding='utf-8') as file:
+        json.dump(data, file, ensure_ascii=False, indent=4)
+
 # Fungsi untuk mencari buku berdasarkan kategori atau kata kunci
 def cari_buku(kategori_dicari, keywords, data):
     hasil = []
@@ -60,6 +65,13 @@ def register(username, password, users):
         return False
     users[username] = password
     return True
+
+# Fungsi untuk menampilkan semua buku
+def tampilkan_semua_buku(data):
+    semua_buku = []
+    for kategori in data:
+        semua_buku.extend(kategori['buku'])
+    return semua_buku
 
 # Inisialisasi data pengguna
 data_pengguna = {
@@ -89,29 +101,31 @@ st.sidebar.image(qr_image, caption="Untuk Mengakses Portal Ini Gunakan QR Code D
 
 # Login atau Registrasi
 if not st.session_state.logged_in:
-    st.title("Login ke Portal Pencarian Buku")
-    username = st.text_input("Username")
-    password = st.text_input("Password", type="password")
+    st.title("Portal Pencarian Buku Laporan PKL")
 
-    if st.button("Login"):
-        if login(username, password, data_pengguna):
-            st.session_state.logged_in = True
-            st.session_state.username = username
-            st.success("Login berhasil!")
-        else:
-            st.error("Username atau password salah.")
+    pilihan = st.radio("Pilih Opsi:", ["Login", "Registrasi"])
 
-    st.subheader("Registrasi Pengguna Baru")
-    reg_username = st.text_input("Username Baru")
-    reg_password = st.text_input("Password Baru", type="password")
+    if pilihan == "Login":
+        username = st.text_input("Username")
+        password = st.text_input("Password", type="password")
 
-    if st.button("Registrasi"):
-        if register(reg_username, reg_password, data_pengguna):
-            st.success("Registrasi berhasil! Anda akan login otomatis.")
-            st.session_state.logged_in = True
-            st.session_state.username = reg_username
-        else:
-            st.error("Username sudah terdaftar.")
+        if st.button("Login"):
+            if login(username, password, data_pengguna):
+                st.session_state.logged_in = True
+                st.session_state.username = username
+                st.success("Login berhasil!")
+            else:
+                st.error("Username atau password salah.")
+
+    elif pilihan == "Registrasi":
+        reg_username = st.text_input("Username Baru")
+        reg_password = st.text_input("Password Baru", type="password")
+
+        if st.button("Registrasi"):
+            if register(reg_username, reg_password, data_pengguna):
+                st.success("Registrasi berhasil! Silakan login menggunakan akun Anda.")
+            else:
+                st.error("Username sudah terdaftar.")
 else:
     st.sidebar.write(f"Selamat datang, {st.session_state.username}!")
     if st.sidebar.button("Logout"):
@@ -132,14 +146,35 @@ if st.session_state.logged_in:
 
     # Jika data berhasil dibaca
     if data_perpustakaan:
-        # Ambil daftar kategori buku
-        Daftar_Judul = [kategori['kategori'] for kategori in data_perpustakaan]
+        # Tombol untuk menampilkan semua buku
+        if st.button("Tampilkan Semua Buku"):
+            semua_buku = tampilkan_semua_buku(data_perpustakaan)
+            if semua_buku:
+                df = pd.DataFrame(semua_buku)
+                df['No'] = range(1, len(df) + 1)
+                df = df.rename(columns={
+                    'Nomor_Urut_Arsip': 'No. Arsip', 
+                    'Tahun_Pelaksanaan': 'Tahun', 
+                    'NIM': 'NIM',
+                    'Nama_Mahasiswa': 'Nama Mahasiswa', 
+                    'Judul_Laporan_PKL': 'Judul Laporan PKL', 
+                    'Nama_Dosen_Pembimbing': 'Nama Dosen Pembimbing',
+                    'Nama_Tempat_Pelaksanaan': 'Nama Tempat Pelaksanaan', 
+                    'Kabupaten_/_Kota_Pelaksanaan': 'Kab./Kota'
+                })
+                df = df[['No', 'No. Arsip', 'Tahun', 'NIM', 
+                         'Nama Mahasiswa', 'Judul Laporan PKL', 'Nama Dosen Pembimbing', 
+                         'Nama Tempat Pelaksanaan', 'Kab./Kota']]
+                st.subheader("Daftar Semua Buku")
+                st.write(df.to_html(index=False), unsafe_allow_html=True)
+            else:
+                st.warning("Tidak ada buku yang tersedia.")
 
-        kategori_yang_dicari = st.radio("Tampilkan Daftar Judul Buku:", Daftar_Judul)
-        
-        # Input pengguna
-        daftar_kategori = ["Cari Judul Laporan Berdasarkan Kata Kunci"] + [kategori['kategori'] for kategori in data_perpustakaan]
-        
+        # Input pengguna untuk pencarian buku
+        st.subheader("Pencarian Buku")
+        daftar_kategori = ["Pilih kategori buku"] + [kategori['kategori'] for kategori in data_perpustakaan]
+        kategori_yang_dicari = st.selectbox("Pilih Kategori Buku:", daftar_kategori)
+
         keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (pisahkan dengan koma jika lebih dari satu kata kunci):")
         keywords = [kw.strip() for kw in keyword_input.split(",") if kw.strip()]
 
@@ -168,10 +203,10 @@ if st.session_state.logged_in:
                              'Nama Tempat Pelaksanaan', 'Kab./Kota']]
                     st.subheader(f"Hasil pencarian untuk kategori '{kategori_yang_dicari}':")
                     st.write(df.to_html(index=False), unsafe_allow_html=True)
-                    
+
                     # Tampilkan jumlah hasil pencarian
                     st.info(f"Jumlah hasil pencarian: {len(hasil_pencarian)} buku.")
-                    
+
                     # Tampilkan jumlah kata kunci yang ditemukan
                     st.info(f"Jumlah kata kunci yang ditemukan: {len(kata_kunci_ditemukan)} dari {len(keywords)} kata kunci yang dicari.")
                 else:
