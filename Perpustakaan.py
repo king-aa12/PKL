@@ -82,7 +82,7 @@ Portal Ini Untuk Mencari Judul Buku Laporan PKL Prodi Teknik Informatika Jurusan
 """)
 
 # Menambahkan QR code pada sidebar
-url_aplikasi = "https://perpus-pkl.streamlit.app/"
+url_aplikasi = "https://perpustkaan-polnep-judul-pkl-ti.streamlit.app/"
 qr_code = buat_qr_code(url_aplikasi)
 qr_image = Image.open(qr_code)
 st.sidebar.image(qr_image, caption="Untuk Mengakses Portal Ini Gunakan QR Code Diatas.", use_container_width=True)
@@ -107,7 +107,9 @@ if not st.session_state.logged_in:
 
     if st.button("Registrasi"):
         if register(reg_username, reg_password, data_pengguna):
-            st.success("Registrasi berhasil! Silakan login.")
+            st.success("Registrasi berhasil! Anda akan login otomatis.")
+            st.session_state.logged_in = True
+            st.session_state.username = reg_username
         else:
             st.error("Username sudah terdaftar.")
 else:
@@ -123,7 +125,7 @@ if st.session_state.logged_in:
     st.title("Portal Pencarian Judul Laporan PKL Prodi Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri Pontianak")
 
     # Nama file JSON yang ingin dibaca
-    nama_file = 'datajsonbuku.json'
+    nama_file = 'C://TUGAS MAKUL ALGORITMA PEMROGRAMAN//KELOMPOK 2//datajsonbuku.json'
 
     # Membaca data dari file JSON
     data_perpustakaan = baca_data_dari_file(nama_file)
