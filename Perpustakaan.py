@@ -82,7 +82,7 @@ Portal Ini Untuk Mencari Judul Buku Laporan PKL Prodi Teknik Informatika Jurusan
 """)
 
 # Menambahkan QR code pada sidebar
-url_aplikasi = "https://perpustkaan-polnep-judul-pkl-ti.streamlit.app/"
+url_aplikasi = "https://perpus-pkl.streamlit.app/"
 qr_code = buat_qr_code(url_aplikasi)
 qr_image = Image.open(qr_code)
 st.sidebar.image(qr_image, caption="Untuk Mengakses Portal Ini Gunakan QR Code Diatas.", use_container_width=True)
