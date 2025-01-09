@@ -27,17 +27,27 @@ def baca_data_dari_file(nama_file):
     if os.path.exists(nama_file):
         with open(nama_file, 'r', encoding='utf-8') as file:
             try:
-                return json.load(file)
+                data = json.load(file)
+                return data
             except json.JSONDecodeError:
                 st.error(f"Format data dalam file '{nama_file}' tidak valid.")
-                return {}
+                return None
     else:
-        return {}
+        st.error(f"File '{nama_file}' tidak ditemukan.")
+        return None
 
-# Fungsi untuk menulis data ke file JSON
-def tulis_data_ke_file(nama_file, data):
-    with open(nama_file, 'w', encoding='utf-8') as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
+# Fungsi untuk mencari buku berdasarkan kata kunci
+def cari_buku(keywords, data):
+    hasil = []
+    kata_kunci_ditemukan = set()
+    for kategori in data:
+        for buku in kategori['buku']:
+            for keyword in keywords:
+                if keyword.lower() in str(buku).lower():
+                    hasil.append(buku)
+                    kata_kunci_ditemukan.add(keyword.lower())
+                    break
+    return hasil, kata_kunci_ditemukan
 
 # Fungsi untuk login
 def login(username, password, users):
@@ -50,44 +60,19 @@ def register(username, password, users):
     users[username] = password
     return True
 
-# Fungsi untuk mencari buku berdasarkan kata kunci di berbagai kolom
-def cari_buku_berdasarkan_kata_kunci(data, keywords):
-    hasil = []
-    for buku in data:
-        if any(keyword.lower() in str(buku).lower() for keyword in keywords):
-            hasil.append(buku)
-    return hasil
+# Fungsi untuk menampilkan semua buku
+def tampilkan_semua_buku(data):
+    semua_buku = []
+    for kategori in data:
+        semua_buku.extend(kategori['buku'])
+    return semua_buku
 
-# Fungsi untuk menambahkan buku baru
-def tambah_buku(data, buku_baru):
-    data.append(buku_baru)
-    return data
+# Inisialisasi data pengguna
+data_pengguna = {
+    "admin": "admin123"
+}
 
-# Fungsi untuk mengedit buku berdasarkan NIM
-def edit_buku(data, nim, data_baru):
-    for buku in data:
-        if buku['NIM'] == nim:
-            buku.update(data_baru)
-            return True
-    return False
-
-# Fungsi untuk menghapus buku berdasarkan NIM
-def hapus_buku(data, nim):
-    for buku in data:
-        if buku['NIM'] == nim:
-            data.remove(buku)
-            return True
-    return False
-
-# Nama file untuk data pengguna dan data buku
-file_pengguna = 'data_pengguna.json'
-file_buku = 'datajsonbuku.json'
-
-# Memuat data pengguna dan data buku dari file JSON
-data_pengguna = baca_data_dari_file(file_pengguna)
-data_buku = baca_data_dari_file(file_buku)
-
-# Inisialisasi session state untuk login
+# Session state untuk menyimpan status login
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "username" not in st.session_state:
@@ -131,12 +116,10 @@ if not st.session_state.logged_in:
         reg_password = st.text_input("Password Baru", type="password")
 
         if st.button("Registrasi"):
-            if reg_username in data_pengguna:
-                st.error("Username sudah terdaftar.")
-            else:
-                data_pengguna[reg_username] = reg_password
-                tulis_data_ke_file(file_pengguna, data_pengguna)
+            if register(reg_username, reg_password, data_pengguna):
                 st.success("Registrasi berhasil! Silakan login menggunakan akun Anda.")
+            else:
+                st.error("Username sudah terdaftar.")
 else:
     st.sidebar.write(f"Selamat datang, {st.session_state.username}!")
     if st.sidebar.button("Logout"):
@@ -146,26 +129,81 @@ else:
 
 # Jika pengguna sudah login, tampilkan aplikasi utama
 if st.session_state.logged_in:
+    # Judul aplikasi
     st.title("Portal Pencarian Judul Laporan PKL Prodi Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri Pontianak")
 
-    # Tampilkan semua buku setelah login
-    if data_buku:
-        semua_buku = []
-        for kategori in data_buku:
-            semua_buku.extend(kategori['buku'])
+    # Nama file JSON yang ingin dibaca
+    nama_file = 'datajsonbuku.json'
 
+    # Membaca data dari file JSON
+    data_perpustakaan = baca_data_dari_file(nama_file)
+
+    # Jika data berhasil dibaca
+    if data_perpustakaan:
+        # Input pengguna untuk pencarian buku
         st.subheader("Pencarian Buku")
         keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (pisahkan dengan koma jika lebih dari satu kata kunci):")
         keywords = [kw.strip() for kw in keyword_input.split(",") if kw.strip()]
 
+        # Tombol pencarian
         if st.button("Cari"):
-            hasil_pencarian = cari_buku_berdasarkan_kata_kunci(semua_buku, keywords)
+            if keywords:
+                # Cari buku berdasarkan kata kunci
+                hasil_pencarian, kata_kunci_ditemukan = cari_buku(keywords, data_perpustakaan)
 
-            if hasil_pencarian:
-                df = pd.DataFrame(hasil_pencarian)
-                st.subheader("Hasil Pencarian")
-                st.dataframe(df)
+                # Buat DataFrame untuk menampilkan hasil
+                if hasil_pencarian:
+                    df = pd.DataFrame(hasil_pencarian)
+                    df['No'] = range(1, len(df) + 1)
+                    df = df.rename(columns={
+                        'Nomor_Urut_Arsip': 'No. Arsip', 
+                        'Tahun_Pelaksanaan': 'Tahun', 
+                        'NIM': 'NIM',
+                        'Nama_Mahasiswa': 'Nama Mahasiswa', 
+                        'Judul_Laporan_PKL': 'Judul Laporan PKL', 
+                        'Nama_Dosen_Pembimbing': 'Nama Dosen Pembimbing',
+                        'Nama_Tempat_Pelaksanaan': 'Nama Tempat Pelaksanaan', 
+                        'Kabupaten_/_Kota_Pelaksanaan': 'Kab./Kota'
+                    })
+                    df = df[['No', 'No. Arsip', 'Tahun', 'NIM', 
+                             'Nama Mahasiswa', 'Judul Laporan PKL', 'Nama Dosen Pembimbing', 
+                             'Nama Tempat Pelaksanaan', 'Kab./Kota']]
+                    st.subheader("Hasil Pencarian Buku:")
+                    st.write(df.to_html(index=False), unsafe_allow_html=True)
+
+                    # Tampilkan jumlah hasil pencarian
+                    st.info(f"Jumlah hasil pencarian: {len(hasil_pencarian)} buku.")
+
+                    # Tampilkan jumlah kata kunci yang ditemukan
+                    st.info(f"Jumlah kata kunci yang ditemukan: {len(kata_kunci_ditemukan)} dari {len(keywords)} kata kunci yang dicari.")
+                else:
+                    st.warning("Tidak ada buku yang cocok dengan pencarian Anda.")
             else:
-                st.warning("Tidak ada buku yang cocok dengan pencarian Anda.")
+                st.warning("Silakan masukkan kata kunci pencarian.")
+
+        # Tombol untuk menampilkan semua buku
+        if st.button("Tampilkan Semua Buku"):
+            semua_buku = tampilkan_semua_buku(data_perpustakaan)
+            if semua_buku:
+                st.info(f"Jumlah total buku: {len(semua_buku)} buku.")
+                df = pd.DataFrame(semua_buku)
+                df['No'] = range(1, len(df) + 1)
+                df = df.rename(columns={
+                    'Nomor_Urut_Arsip': 'No. Arsip', 
+                    'Tahun_Pelaksanaan': 'Tahun', 
+                    'NIM': 'NIM',
+                    'Nama_Mahasiswa': 'Nama Mahasiswa', 
+                    'Judul_Laporan_PKL': 'Judul Laporan PKL', 
+                    'Nama_Dosen_Pembimbing': 'Nama Dosen Pembimbing',
+                    'Nama_Tempat_Pelaksanaan': 'Nama Tempat Pelaksanaan', 
+                    'Kabupaten_/_Kota_Pelaksanaan': 'Kab./Kota'
+                })
+                df = df[['No', 'No. Arsip', 'Tahun', 'NIM', 
+                         'Nama Mahasiswa', 'Judul Laporan PKL', 'Nama Dosen Pembimbing', 
+                         'Nama Tempat Pelaksanaan', 'Kab./Kota']]
+                st.subheader("Daftar Semua Buku")
+                st.write(df.to_html(index=False), unsafe_allow_html=True)
+            else:
+                st.warning("Tidak ada buku yang tersedia.")
     else:
-        st.error("Tidak ada data buku yang ditemukan.")
+        st.error("Data perpustakaan tidak tersedia.")
