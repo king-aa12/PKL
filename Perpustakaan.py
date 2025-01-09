@@ -27,14 +27,12 @@ def baca_data_dari_file(nama_file):
     if os.path.exists(nama_file):
         with open(nama_file, 'r', encoding='utf-8') as file:
             try:
-                data = json.load(file)
-                return data
+                return json.load(file)
             except json.JSONDecodeError:
                 st.error(f"Format data dalam file '{nama_file}' tidak valid.")
-                return None
+                return {}
     else:
-        st.error(f"File '{nama_file}' tidak ditemukan.")
-        return None
+        return {}
 
 # Fungsi untuk menulis data ke file JSON
 def tulis_data_ke_file(nama_file, data):
@@ -81,12 +79,15 @@ def hapus_buku(data, nim):
             return True
     return False
 
-# Inisialisasi data pengguna
-data_pengguna = {
-    "admin": "admin123"
-}
+# Nama file untuk data pengguna dan data buku
+file_pengguna = 'data_pengguna.json'
+file_buku = 'datajsonbuku.json'
 
-# Session state untuk menyimpan status login
+# Memuat data pengguna dan data buku dari file JSON
+data_pengguna = baca_data_dari_file(file_pengguna)
+data_buku = baca_data_dari_file(file_buku)
+
+# Inisialisasi session state untuk login
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
 if "username" not in st.session_state:
@@ -130,10 +131,12 @@ if not st.session_state.logged_in:
         reg_password = st.text_input("Password Baru", type="password")
 
         if st.button("Registrasi"):
-            if register(reg_username, reg_password, data_pengguna):
-                st.success("Registrasi berhasil! Silakan login menggunakan akun Anda.")
-            else:
+            if reg_username in data_pengguna:
                 st.error("Username sudah terdaftar.")
+            else:
+                data_pengguna[reg_username] = reg_password
+                tulis_data_ke_file(file_pengguna, data_pengguna)
+                st.success("Registrasi berhasil! Silakan login menggunakan akun Anda.")
 else:
     st.sidebar.write(f"Selamat datang, {st.session_state.username}!")
     if st.sidebar.button("Logout"):
@@ -145,16 +148,10 @@ else:
 if st.session_state.logged_in:
     st.title("Portal Pencarian Judul Laporan PKL Prodi Teknik Informatika Jurusan Teknik Elektro Politeknik Negeri Pontianak")
 
-    # Nama file JSON yang ingin dibaca
-    nama_file = 'datajsonbuku.json'
-
-    # Membaca data dari file JSON
-    data_perpustakaan = baca_data_dari_file(nama_file)
-
-    # Jika data berhasil dibaca, tampilkan semua buku setelah login
-    if data_perpustakaan:
+    # Tampilkan semua buku setelah login
+    if data_buku:
         semua_buku = []
-        for kategori in data_perpustakaan:
+        for kategori in data_buku:
             semua_buku.extend(kategori['buku'])
 
         st.subheader("Pencarian Buku")
@@ -166,125 +163,9 @@ if st.session_state.logged_in:
 
             if hasil_pencarian:
                 df = pd.DataFrame(hasil_pencarian)
-                df['No'] = range(1, len(df) + 1)
-                df = df.rename(columns={
-                    'Nomor_Urut_Arsip': 'No. Arsip', 
-                    'Tahun_Pelaksanaan': 'Tahun', 
-                    'NIM': 'NIM',
-                    'Nama_Mahasiswa': 'Nama Mahasiswa', 
-                    'Judul_Laporan_PKL': 'Judul Laporan PKL', 
-                    'Nama_Dosen_Pembimbing': 'Nama Dosen Pembimbing',
-                    'Nama_Tempat_Pelaksanaan': 'Nama Tempat Pelaksanaan', 
-                    'Kabupaten_/_Kota_Pelaksanaan': 'Kab./Kota'
-                })
-                df = df[['No', 'No. Arsip', 'Tahun', 'NIM', 'Nama Mahasiswa', 'Judul Laporan PKL', 'Nama Dosen Pembimbing', 'Nama Tempat Pelaksanaan', 'Kab./Kota']]
                 st.subheader("Hasil Pencarian")
-                st.write(df.to_html(index=False), unsafe_allow_html=True)
+                st.dataframe(df)
             else:
                 st.warning("Tidak ada buku yang cocok dengan pencarian Anda.")
-
-
-# Fungsi untuk memeriksa apakah pengguna adalah admin
-def cek_admin():
-    return st.session_state.username == "admin"
-
-# Fungsi utama aplikasi setelah login
-if st.session_state.logged_in:
-    st.title("Portal Manajemen Buku Laporan PKL")
-
-    # Nama file JSON yang ingin dibaca
-    nama_file = 'datajsonbuku.json'
-    data_perpustakaan = baca_data_dari_file(nama_file)
-
-    # Tampilkan daftar semua buku jika data tersedia
-    if data_perpustakaan:
-        semua_buku = [buku for kategori in data_perpustakaan for buku in kategori['buku']]
-        st.subheader("Daftar Buku Tersedia")
-        df = pd.DataFrame(semua_buku)
-        df = df.rename(columns={
-            'Nomor_Urut_Arsip': 'No. Arsip', 
-            'Tahun_Pelaksanaan': 'Tahun', 
-            'NIM': 'NIM',
-            'Nama_Mahasiswa': 'Nama Mahasiswa', 
-            'Judul_Laporan_PKL': 'Judul Laporan PKL', 
-            'Nama_Dosen_Pembimbing': 'Nama Dosen Pembimbing',
-            'Nama_Tempat_Pelaksanaan': 'Nama Tempat Pelaksanaan', 
-            'Kabupaten_/_Kota_Pelaksanaan': 'Kab./Kota'
-        })
-        st.dataframe(df)
-
-        # Hanya admin yang dapat mengedit, menambah, atau menghapus buku
-        if cek_admin():
-            st.subheader("Manajemen Buku")
-
-            # Tambah Buku Baru
-            if st.checkbox("Tambah Buku Baru"):
-                nim_baru = st.text_input("NIM")
-                nama_mahasiswa = st.text_input("Nama Mahasiswa")
-                judul_laporan = st.text_input("Judul Laporan PKL")
-                nama_dosen = st.text_input("Nama Dosen Pembimbing")
-                tempat_pelaksanaan = st.text_input("Nama Tempat Pelaksanaan")
-                kabupaten = st.text_input("Kab./Kota Pelaksanaan")
-                tahun_pelaksanaan = st.text_input("Tahun Pelaksanaan")
-                no_arsip = st.text_input("No. Arsip")
-
-                if st.button("Simpan Buku Baru"):
-                    buku_baru = {
-                        "NIM": nim_baru,
-                        "Nama_Mahasiswa": nama_mahasiswa,
-                        "Judul_Laporan_PKL": judul_laporan,
-                        "Nama_Dosen_Pembimbing": nama_dosen,
-                        "Nama_Tempat_Pelaksanaan": tempat_pelaksanaan,
-                        "Kabupaten_/_Kota_Pelaksanaan": kabupaten,
-                        "Tahun_Pelaksanaan": tahun_pelaksanaan,
-                        "Nomor_Urut_Arsip": no_arsip
-                    }
-                    semua_buku.append(buku_baru)
-                    tulis_data_ke_file(nama_file, semua_buku)
-                    st.success("Buku baru berhasil ditambahkan!")
-
-            # Edit Buku
-            if st.checkbox("Edit Buku"):
-                nim_edit = st.text_input("Masukkan NIM Buku yang Akan Diedit")
-                if st.button("Cari Buku"):
-                    buku_ditemukan = next((b for b in semua_buku if b['NIM'] == nim_edit), None)
-                    if buku_ditemukan:
-                        st.write("Buku Ditemukan:", buku_ditemukan)
-                        nama_mahasiswa = st.text_input("Nama Mahasiswa", buku_ditemukan['Nama_Mahasiswa'])
-                        judul_laporan = st.text_input("Judul Laporan PKL", buku_ditemukan['Judul_Laporan_PKL'])
-                        nama_dosen = st.text_input("Nama Dosen Pembimbing", buku_ditemukan['Nama_Dosen_Pembimbing'])
-                        tempat_pelaksanaan = st.text_input("Nama Tempat Pelaksanaan", buku_ditemukan['Nama_Tempat_Pelaksanaan'])
-                        kabupaten = st.text_input("Kab./Kota Pelaksanaan", buku_ditemukan['Kabupaten_/_Kota_Pelaksanaan'])
-                        tahun_pelaksanaan = st.text_input("Tahun Pelaksanaan", buku_ditemukan['Tahun_Pelaksanaan'])
-                        no_arsip = st.text_input("No. Arsip", buku_ditemukan['Nomor_Urut_Arsip'])
-
-                        if st.button("Simpan Perubahan"):
-                            buku_ditemukan.update({
-                                "Nama_Mahasiswa": nama_mahasiswa,
-                                "Judul_Laporan_PKL": judul_laporan,
-                                "Nama_Dosen_Pembimbing": nama_dosen,
-                                "Nama_Tempat_Pelaksanaan": tempat_pelaksanaan,
-                                "Kabupaten_/_Kota_Pelaksanaan": kabupaten,
-                                "Tahun_Pelaksanaan": tahun_pelaksanaan,
-                                "Nomor_Urut_Arsip": no_arsip
-                            })
-                            tulis_data_ke_file(nama_file, semua_buku)
-                            st.success("Perubahan berhasil disimpan!")
-                    else:
-                        st.warning("Buku dengan NIM tersebut tidak ditemukan.")
-
-            # Hapus Buku
-            if st.checkbox("Hapus Buku"):
-                nim_hapus = st.text_input("Masukkan NIM Buku yang Akan Dihapus")
-                if st.button("Hapus Buku"):
-                    buku_dihapus = next((b for b in semua_buku if b['NIM'] == nim_hapus), None)
-                    if buku_dihapus:
-                        semua_buku.remove(buku_dihapus)
-                        tulis_data_ke_file(nama_file, semua_buku)
-                        st.success("Buku berhasil dihapus!")
-                    else:
-                        st.warning("Buku dengan NIM tersebut tidak ditemukan.")
-        else:
-            st.info("Fitur manajemen buku hanya tersedia untuk admin.")
     else:
         st.error("Tidak ada data buku yang ditemukan.")
