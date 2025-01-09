@@ -142,7 +142,7 @@ if st.session_state.logged_in:
     if data_perpustakaan:
         # Input pengguna untuk pencarian buku
         st.subheader("Pencarian Buku")
-        keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (pisahkan dengan koma jika lebih dari satu kata kunci):")
+        keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (Nama MHS, NIM, Nama DosPem, Tempat pkl, Kab/Kota):")
         keywords = [kw.strip() for kw in keyword_input.split(",") if kw.strip()]
 
         # Tombol pencarian
@@ -150,7 +150,11 @@ if st.session_state.logged_in:
             if keywords:
                 # Cari buku berdasarkan kata kunci
                 hasil_pencarian, kata_kunci_ditemukan = cari_buku(keywords, data_perpustakaan)
+                # Tampilkan jumlah hasil pencarian
+                st.info(f"Jumlah hasil pencarian: {len(hasil_pencarian)} buku.")
 
+                # Tampilkan jumlah kata kunci yang ditemukan
+                st.info(f"Jumlah kata kunci yang ditemukan: {len(kata_kunci_ditemukan)} dari {len(keywords)} kata kunci yang dicari.")
                 # Buat DataFrame untuk menampilkan hasil
                 if hasil_pencarian:
                     df = pd.DataFrame(hasil_pencarian)
@@ -171,11 +175,7 @@ if st.session_state.logged_in:
                     st.subheader("Hasil Pencarian Buku:")
                     st.write(df.to_html(index=False), unsafe_allow_html=True)
 
-                    # Tampilkan jumlah hasil pencarian
-                    st.info(f"Jumlah hasil pencarian: {len(hasil_pencarian)} buku.")
-
-                    # Tampilkan jumlah kata kunci yang ditemukan
-                    st.info(f"Jumlah kata kunci yang ditemukan: {len(kata_kunci_ditemukan)} dari {len(keywords)} kata kunci yang dicari.")
+                    
                 else:
                     st.warning("Tidak ada buku yang cocok dengan pencarian Anda.")
             else:
