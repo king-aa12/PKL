@@ -142,7 +142,7 @@ if st.session_state.logged_in:
     if data_perpustakaan:
         # Input pengguna untuk pencarian buku
         st.subheader("Pencarian Buku")
-        keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (Nama MHS, NIM, Nama DosPem, Tempat pkl, Kab/Kota):")
+        keyword_input = st.text_input("Masukkan Kata Kunci Pencarian (Nama MHS, NIM, Nama DosPem, Tempat pkl, Kab/Kota) jika ingin memasukkan lebih dari 1 kata kunci pakai tanda koma (,):")
         keywords = [kw.strip() for kw in keyword_input.split(",") if kw.strip()]
 
         # Tombol pencarian
