@@ -105,6 +105,10 @@ def tampilkan_opsi_buku():
 
 # Fungsi untuk menambah buku
 def tambah_buku(data, nama_file):
+    if st.session_state.username != "admin":
+        st.error("Hanya admin yang dapat menambah buku.")
+        return
+
     st.subheader("Tambah Buku")
     nomor_urut = st.text_input("Nomor Urut Arsip")
     tahun = st.text_input("Tahun Pelaksanaan")
@@ -135,6 +139,10 @@ def tambah_buku(data, nama_file):
 
 # Fungsi untuk mengedit buku
 def edit_buku(data, nama_file):
+    if st.session_state.username != "admin":
+        st.error("Hanya admin yang dapat mengedit buku.")
+        return
+
     st.subheader("Edit Buku")
     nomor_urut = st.text_input("Masukkan Nomor Urut Arsip Buku yang Ingin Diedit")
 
@@ -160,6 +168,10 @@ def edit_buku(data, nama_file):
 
 # Fungsi untuk menghapus buku
 def hapus_buku(data, nama_file):
+    if st.session_state.username != "admin":
+        st.error("Hanya admin yang dapat menghapus buku.")
+        return
+
     st.subheader("Hapus Buku")
     nomor_urut = st.text_input("Masukkan Nomor Urut Arsip Buku yang Ingin Dihapus")
 
